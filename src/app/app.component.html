@@ -1,0 +1,21 @@
+
+<mat-sidenav-container class="matSidenavContainer">
+
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+     
+           
+            <div fxFlex fxlayout fxLayoutAlign="flex-end" fxHide.sm>
+                <a mat-button [routerLink]="'/register'" *ngIf="!(authService.userLoggedIn| async)"> Regisztráció </a>
+                <a mat-button [routerLink]="'/contact'"> Kapcsolat </a>
+                <a mat-button [routerLink]="'/profile'" *ngIf="(authService.userLoggedIn| async)"> Profil </a>
+                <a mat-button [routerLink]="'/login'" *ngIf="!(authService.userLoggedIn| async)"> bejelentkezés </a>
+                <a mat-button [routerLink]="'/login'"  *ngIf="(authService.userLoggedIn| async)" (click)="logout()"> Kijelentkezés </a>
+            </div>
+        </mat-toolbar>
+        
+    </mat-sidenav-content>
+ 
+</mat-sidenav-container>
+
+<router-outlet></router-outlet>  

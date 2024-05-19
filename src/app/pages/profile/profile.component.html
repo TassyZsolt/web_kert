@@ -1,0 +1,23 @@
+<div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start" style="height: 100%;" class="background" fxLayoutAlign="center center">
+    <div fxFlex="50%" fxFlex.xs="100%" fxLayoutAlign="center center">
+    <mat-card>
+        <form [formGroup]="updateForm" (ngSubmit)="update()">
+            <p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Vezeték név</mat-label>
+                    <input autocomplete="off" formControlName="firstnameC" type="text" matInput placeholder="Vezeték név" [value]="firsname">
+                </mat-form-field>
+            </p>
+    
+            <p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Kereszt név</mat-label>
+                    <input autocomplete="off" formControlName="lastnameC" type="text" matInput placeholder="Kereszt név" [value]="lastname">
+                </mat-form-field>
+            </p>
+           
+            <button mat-raised-button color="primary">Frissítés</button>
+        </form>
+    </mat-card>
+    </div>
+</div>
